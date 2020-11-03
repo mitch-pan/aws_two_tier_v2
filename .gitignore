@@ -1,0 +1,7 @@
+# .tfstate files
+*.tfstate
+*.tfstate.*
+.DS_Store
+*private_key*
+files/content/*
+files/license/*
