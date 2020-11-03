@@ -7,7 +7,7 @@ S3 bucket.  <p>
 This repo will generate a new SSH key, S3 bucket based on the contents of the <code>files</code> directory and pick the 
 appropriate VM-Series AMI dynamically based on your region.
 
-##Prerequesits
+## Prerequesits
 Ensure that the AWS CLI is installed.  More info can be found here:<br><br>
 MAC - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html<br>
 Windows - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html
@@ -16,17 +16,17 @@ Windows - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows
 Make sure you have your AWS credentials configured, per the guidelines here: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html.  For instance on Mac or Linux machine, you should have a ~/.aws/credentials file.
 
 ## Getting Started
-####Download the aws_two_tier_v2 repo:
+#### Download the aws_two_tier_v2 repo:
 <code>git clone https://github.com/mitch-pan/aws_two_tier_v2.git
 <br>cd aws_two_tier_v2 directory</code>
 
-####Write to license file
+#### Write to license file
 Make sure a registered auth code is present in the files/license/authcodes file.  This will be used during the bootstrapping
 process.  You can also update the contents of the files/content directory if you like, and include more current App / Threat
 and Antivirus signatures.
 <br>
 
-####Run terraform
+#### Run terraform
  <code>terraform init</code><br/>
  <code>terraform plan</code><br>
  <code>terraform apply</code><br>
@@ -42,7 +42,7 @@ When completed, there will be several terraform output you will want to take not
 
 You can copy and paste the values of each of these variables for easier ssh and web access later.
 
-####SSH into VM and set admin password<br>
+#### SSH into VM and set admin password<br>
 When the script completes, chmod the private_key file to have the appropriate permissions.
 <br><br><code>chmod 600 private_key</code><br><br>
 After the VM-Series has come up (this takes about 10-15 minutes, due to reboot during bootstrapping), log into the CLI 
@@ -59,12 +59,12 @@ If things look good, proceed with changing the admin password<br><br>
 <code>commit</code><br>
 
 
-####Log into NGFW GUI with newly configured credentials<br>
+#### Log into NGFW GUI with newly configured credentials<br>
 Use the terraform output "FirewallManagementURL" to determnine the IP to use for the NGFW's 
 management address.
 
 
-####Install Apache web server on the Linux host
+#### Install Apache web server on the Linux host
 If you want to observer HTTP traffic through the NGFW, install apache on the Ubuntu server that was created.  The output
 from terraform will include the ssh command to log into the Linux server.  It will use port 221 to connect.  The
 exact command is in the <code>Ubuntu_SSH_Command</code> output, and should look something like this:<br>
@@ -77,7 +77,7 @@ exact command is in the <code>Ubuntu_SSH_Command</code> output, and should look 
 <br>
 To reach the web server, use the URL given in the scrip output, which is the NGFW's public IP address.
 
-####Destroy Instance
+#### Destroy Instance
 When you are done, use terraform to destroy your deployment<br>
 <br>
 Optional - Reclaim the license associated with the authcode you used.  To do this follow the procedures 
