@@ -3,5 +3,3 @@
 *.tfstate.*
 .DS_Store
 *private_key*
-files/content/*
-files/license/*
