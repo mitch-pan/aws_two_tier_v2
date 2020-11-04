@@ -17,8 +17,9 @@ Make sure you have your AWS credentials configured, per the guidelines here: htt
 
 ## Getting Started
 #### Download the aws_two_tier_v2 repo:
-<code>git clone https://github.com/mitch-pan/aws_two_tier_v2.git
-<br><br>cd aws_two_tier_v2 directory</code>
+<code>git clone https://github.com/mitch-pan/aws_two_tier_v2.git</code>
+<br><br>
+<code>cd aws_two_tier_v2 directory</code>
 
 #### Write to license file
 Make sure a registered auth code is present in the files/license/authcodes file.  This will be used during the bootstrapping
